@@ -26,5 +26,10 @@ export default () => (
     </ul>
     <Data />
     <p>{process.env.TEST_VAR}</p>
+    <style jsx>{`
+      .data {
+        color: #3c5;
+      }
+    `}</style>
   </>
 );
