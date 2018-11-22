@@ -4,8 +4,8 @@ export default class extends Component<{ postId: string }> {
   static getInitialProps({ query: { id } }) {
     return { postId: id };
   }
-
   render() {
+    console.log('C', this.props.postId);
     return (
       <div>
         <h1>My blog post #{this.props.postId}</h1>
