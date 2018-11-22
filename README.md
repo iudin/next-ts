@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/zeit/next.js/tree/master/examples/custom-server-express)
 
 # Custom Express Server example
@@ -7,6 +8,9 @@
 ### Using `create-next-app`
 
 Execute [`create-next-app`](https://github.com/segmentio/create-next-app) with [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) or [npx](https://github.com/zkat/npx#readme) to bootstrap the example:
+=======
+##Install
+>>>>>>> ea2856d... Добавить поддержку тестов
 
 ```bash
 npx create-next-app --example custom-server-express custom-server-express-app
@@ -30,9 +34,25 @@ npm install
 npm run dev
 # or
 yarn
+```
+
+##Run
+
+###Tests
+
+```bash
+yarn test # test
+yarn test:watch
+yarn test:coverage # test with coverage report
+```
+
+###Development
+
+```bash
 yarn dev
 ```
 
+<<<<<<< HEAD
 Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
 
 ```bash
@@ -46,3 +66,11 @@ Most of the times the default Next server will be enough but sometimes you want 
 Because the Next.js server is just a node.js module you can combine it with any other part of the node.js ecosystem. in this case we are using express to build a custom router on top of Next.
 
 The example shows a server that serves the component living in `pages/a.js` when the route `/b` is requested and `pages/b.js` when the route `/a` is accessed. This is obviously a non-standard routing strategy. You can see how this custom routing is being made inside `server.js`.
+=======
+###Production
+
+```bash
+yarn build # create .next directory
+yarn start # start server
+```
+>>>>>>> ea2856d... Добавить поддержку тестов
