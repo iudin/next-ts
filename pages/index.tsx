@@ -1,35 +1,46 @@
-import React from 'react';
+import * as React from 'react';
+import styled from '../src/styled-components';
 import Link from 'next/link';
-
-import '../src/css/index.scss';
 
 import Data from '../src/components/data';
 
+const Nav = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`;
+const NavItem = styled.li`
+  display: inline-block;
+`;
+const NavLink = styled.a`
+  padding: 4px 20px;
+  color: ${props => props.theme.primaryColor};
+  cursor: pointer;
+  &:hover {
+    color: ${props => props.theme.secondaryColor};
+  }
+`;
+
 export default () => (
   <>
-    <ul>
-      <li>
+    <Nav>
+      <NavItem>
         <Link href="/a">
-          <a>a</a>
+          <NavLink>a</NavLink>
         </Link>
-      </li>
-      <li>
+      </NavItem>
+      <NavItem>
         <Link href="/b">
-          <a>b</a>
+          <NavLink>b</NavLink>
         </Link>
-      </li>
-      <li>
+      </NavItem>
+      <NavItem>
         <Link href={{ pathname: '/posts', query: { id: '2' } }} as="/posts/2">
-          <a>post #2</a>
+          <NavLink>post #2</NavLink>
         </Link>
-      </li>
-    </ul>
+      </NavItem>
+    </Nav>
     <Data />
     <p>{process.env.TEST_VAR}</p>
-    <style jsx>{`
-      .data {
-        color: #3c5;
-      }
-    `}</style>
   </>
 );

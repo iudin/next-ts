@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`data component renders properly 1`] = `
+<styled.p>
+  No data!
+</styled.p>
+`;
