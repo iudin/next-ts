@@ -11,7 +11,6 @@ export default class extends Component<{ postId: string }> {
     return { postId: id };
   }
   render() {
-    console.log('C', this.props.postId);
     return (
       <div>
         <Title>My blog post #{this.props.postId}</Title>
