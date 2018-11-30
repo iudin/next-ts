@@ -11,6 +11,6 @@ describe('data component', () => {
     expect(toJson(component)).toMatchSnapshot();
   });
   it('renders empty data message when no data provided', () => {
-    expect(component.find('styled.p').text()).toEqual('No data!');
+    expect(component.text()).toEqual('No data!');
   });
 });
