@@ -8,11 +8,12 @@
 - [x] ssr caching with LRU-cache;
 - [x] styles with styled-components both on server and client;
 - [x] custom theme (styled-components);
-- [x] env variables.
+- [x] env variables;
+- [x] semver;
 
 - [ ] redux store;
+- [ ] custom root path;
 - [ ] docker build;
-- [ ] semver;
 - [ ] logger;
 - [ ] head elements;
 - [ ] shallow routing.
@@ -44,4 +45,5 @@ yarn dev
 ```bash
 yarn build # create .next directory
 yarn start # start server
+yarn docker # build docker image with new version num
 ```
