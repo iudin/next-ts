@@ -45,5 +45,5 @@ yarn dev
 ```bash
 yarn build # create .next directory
 yarn start # start server
-yarn docker # build docker image with new version num
+yarn docker # build docker image with new version num (major.minor.patch)
 ```

@@ -5,7 +5,7 @@
     "dev": "nodemon server/index.ts",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node .next/production-server/index.js",
-    "docker": "yarn build && semver -i $(cat version.num) > version.num && docker build -t $npm_package_config_registry:$(cat version.num) . && docker push $npm_package_config_registry:$(cat version.num)",
+    "docker": "yarn build && semver -i patch $(cat version.num) > version.num && docker build -t $npm_package_config_registry:$(cat version.num) . && docker push $npm_package_config_registry:$(cat version.num)",
     "test": "jest --watch",
     "test:coverage": "jest --coverage"
   },
