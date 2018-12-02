@@ -8,37 +8,37 @@ const Nav = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-`;
-const NavItem = styled.li`
-  display: inline-block;
-`;
-const NavLink = styled.a`
-  padding: 4px 20px;
-  color: ${props => props.theme.primaryColor};
-  cursor: pointer;
-  &:hover {
-    color: ${props => props.theme.secondaryColor};
+  li {
+    display: inline-block;
+    a {
+      padding: 4px 20px;
+      color: ${props => props.theme.primaryColor};
+      cursor: pointer;
+      &:hover {
+        color: ${props => props.theme.secondaryColor};
+      }
+    }
   }
 `;
 
 export default () => (
   <>
     <Nav>
-      <NavItem>
+      <li>
         <Link href="/a">
-          <NavLink>a</NavLink>
+          <a>a</a>
         </Link>
-      </NavItem>
-      <NavItem>
+      </li>
+      <li>
         <Link href="/b">
-          <NavLink>b</NavLink>
+          <a>b</a>
         </Link>
-      </NavItem>
-      <NavItem>
+      </li>
+      <li>
         <Link href={{ pathname: '/posts', query: { id: '2' } }} as="/posts/2">
-          <NavLink>post #2</NavLink>
+          <a>post #2</a>
         </Link>
-      </NavItem>
+      </li>
     </Nav>
     <Data />
     <p>{process.env.TEST_VAR}</p>
