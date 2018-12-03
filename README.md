@@ -10,6 +10,7 @@
 - [x] custom theme (styled-components);
 - [x] env variables;
 - [x] semver;
+- [x] webpack aliases;
 
 - [ ] redux store;
 - [ ] custom root path;
@@ -47,3 +48,31 @@ yarn build # create .next directory
 yarn start # start server
 yarn docker # build docker image with new version num (major.minor.patch)
 ```
+
+## Webpack Aliases
+
+`next.config.js`:
+
+```
+config.resolve.alias = {
+  Components: path.resolve(__dirname, 'src/components/')
+};
+```
+
+`tsconfig.json`:
+
+```
+"paths": {
+  "Components/*": ["./src/components/*"]
+},
+```
+
+`jest.config.js`:
+
+```
+moduleNameMapper: {
+  '^Components/(.*)': '<rootDir>/src/components/$1'
+},
+```
+
+Source: [link](https://medium.com/@martin_hotell/type-safe-es2015-module-import-path-aliasing-with-webpack-typescript-and-jest-fe461347e010)

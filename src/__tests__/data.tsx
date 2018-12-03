@@ -3,7 +3,7 @@ import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 import 'jest-styled-components';
 
-import Data from '../components/data';
+import Data from 'Components/data';
 
 describe('data component', () => {
   const component = shallow(<Data data={undefined} />);

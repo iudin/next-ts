@@ -14,6 +14,10 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
+    "paths": {
+      "Static/*": ["./static/*"],
+      "Components/*": ["./src/components/*"]
+    },
     "typeRoots": ["./node_modules/@types"],
     "lib": ["dom", "es2015", "es2016"]
   },

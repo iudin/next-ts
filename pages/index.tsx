@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from '../src/styled-components';
 import Link from 'next/link';
 
-import Data from '../src/components/data';
+import Data from 'Components/data';
 
 const Nav = styled.ul`
   margin: 0;
@@ -19,6 +19,9 @@ const Nav = styled.ul`
       }
     }
   }
+`;
+const Img = styled.img`
+  max-width: 100px;
 `;
 
 export default () => (
@@ -40,6 +43,7 @@ export default () => (
         </Link>
       </li>
     </Nav>
+    <Img src="Static/img/kari-logo.svg" alt="" />
     <Data />
     <p>{process.env.TEST_VAR}</p>
   </>

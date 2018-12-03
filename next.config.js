@@ -14,6 +14,10 @@ module.exports = withTypescript({
         systemvars: true
       })
     ];
+    config.resolve.alias = {
+      Static: path.resolve(__dirname, 'static/'),
+      Components: path.resolve(__dirname, 'src/components/')
+    };
     return config;
   }
 });
