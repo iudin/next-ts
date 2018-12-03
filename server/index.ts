@@ -44,6 +44,7 @@ async function renderAndCache(
 
 app.prepare().then(() => {
   const server = express();
+  server.use('/static', express.static(__dirname + '/static'));
   server.get('/', (req, res) => renderAndCache(req, res, '/'));
   server.get('/posts/:id', (req, res) =>
     renderAndCache(req, res, '/posts', { id: req.params.id })

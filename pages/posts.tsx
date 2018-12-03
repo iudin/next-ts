@@ -4,6 +4,9 @@ import styled from '../src/styled-components';
 const Title = styled.h1`
   color: ${props => props.theme.primaryColor};
 `;
+const Img = styled.img`
+  max-width: 100px;
+`;
 
 export default class extends Component<{ postId: string }> {
   static getInitialProps({ query: { id } }) {
@@ -14,6 +17,7 @@ export default class extends Component<{ postId: string }> {
     return (
       <div>
         <Title>My blog post #{this.props.postId}</Title>
+        <Img src="/static/img/kari-logo.svg" alt="" />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.

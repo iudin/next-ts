@@ -43,8 +43,10 @@ export default () => (
         </Link>
       </li>
     </Nav>
-    <Img src="Static/img/kari-logo.svg" alt="" />
+    <Img src="/static/img/kari-logo.svg" alt="" />
     <Data />
-    <p>{process.env.TEST_VAR}</p>
+    <p>
+      <em>{process.env.TEST_VAR}</em>
+    </p>
   </>
 );
