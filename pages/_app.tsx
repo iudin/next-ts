@@ -19,7 +19,7 @@ const Fonts = createGlobalStyle`
   ${getFontFace('als_rublregular', 'rouble-webfont')}
   ${getFontFace('icomoon', 'icomoon')}
   body {
-    font-family: AvenirNextCyr;
+    font-family: AvenirNextCyr, sans-serif;
   }
   [class^="icon-"], [class*=" icon-"] {
     font-family: 'icomoon' !important;
@@ -34,6 +34,9 @@ const Fonts = createGlobalStyle`
   }
   .icon-arr:before {
     content: "\e900";
+  }
+  .rubl {
+    font-family: als_rublregular;
   }
 `;
 

@@ -62,5 +62,6 @@ export default () => (
     <p style={{ fontWeight: 600 }}>Test text with font weight style...</p>
     <p style={{ fontWeight: 700 }}>Test text with font weight style...</p>
     <p style={{ fontWeight: 900 }}>Test text with font weight style...</p>
+    <p className="rubl">a</p>
   </>
 );

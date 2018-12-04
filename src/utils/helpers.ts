@@ -14,6 +14,7 @@ export function getFontFace(
         url("/static/fonts/${src}.svg#${name}") format("svg");
       font-weight: ${fontWeight};
       font-style: ${fontStyle};
+      font-display: fallback;
     }
   `;
 }
