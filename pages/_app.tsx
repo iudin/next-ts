@@ -5,6 +5,9 @@ import {
   ThemeProviderProps,
   createGlobalStyle
 } from 'styled-components';
+import { Provider } from 'react-redux';
+import withRedux from 'next-redux-wrapper';
+import { initStore } from '../src/store';
 
 import theme, { ITheme } from '../src/theme';
 import { getFontFace } from 'Utils/helpers';
@@ -40,25 +43,31 @@ const Fonts = createGlobalStyle`
   }
 `;
 
-export default class Root extends App<ThemeProviderProps<ITheme>> {
+type IProps = ThemeProviderProps<ITheme> & { store: any };
+
+class Root extends App<IProps> {
   static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-    return { pageProps };
+    return {
+      pageProps: Component.getInitialProps
+        ? await Component.getInitialProps(ctx)
+        : {}
+    };
   }
   public render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, store } = this.props;
     return (
       <Container>
-        <ThemeProvider theme={theme}>
-          <>
-            <Component {...pageProps} />
-            <Fonts />
-          </>
-        </ThemeProvider>
+        <Provider store={store}>
+          <ThemeProvider theme={theme}>
+            <>
+              <Component {...pageProps} />
+              <Fonts />
+            </>
+          </ThemeProvider>
+        </Provider>
       </Container>
     );
   }
 }
+
+export default withRedux(initStore)(Root);

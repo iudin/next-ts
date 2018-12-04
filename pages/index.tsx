@@ -3,6 +3,9 @@ import styled from '../src/styled-components';
 import Link from 'next/link';
 
 import Data from 'Components/data';
+import Articles from 'Components/articles';
+
+import { TransactionTypes } from '../../kari/packages/infrastructure/dist/infrastructure/Document/constants'; // test using other microservices functions
 
 const Nav = styled.ul`
   margin: 0;
@@ -63,5 +66,7 @@ export default () => (
     <p style={{ fontWeight: 700 }}>Test text with font weight style...</p>
     <p style={{ fontWeight: 900 }}>Test text with font weight style...</p>
     <p className="rubl">a</p>
+    <p>Remote function test: {TransactionTypes.REGISTER_POSITION}</p>
+    <Articles />
   </>
 );

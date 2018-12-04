@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "Components/*": ["./src/components/*"],
+      "Store/*": ["./src/store/*"],
       "Utils/*": ["./src/utils/*"]
     },
     "typeRoots": ["./node_modules/@types"],
