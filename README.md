@@ -21,7 +21,8 @@
 - [ ] nested routing;
 - [ ] docker build;
 - [ ] shallow routing;
-- [ ] SEO analytics.
+- [ ] SEO analytics;
+- [ ] static export.
 
 ## Install
 
