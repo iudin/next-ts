@@ -16,6 +16,7 @@ module.exports = withTypescript({
     ];
     config.resolve.alias = {
       Components: path.resolve(__dirname, 'src/components/'),
+      Lib: path.resolve(__dirname, 'lib/'),
       Store: path.resolve(__dirname, 'src/store/'),
       Utils: path.resolve(__dirname, 'src/utils/')
     };

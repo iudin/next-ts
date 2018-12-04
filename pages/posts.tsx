@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from '../src/styled-components';
 
+import logger from 'Lib/log';
+
 const Title = styled.h1`
   color: ${props => props.theme.primaryColor};
 `;
@@ -10,7 +12,7 @@ const Img = styled.img`
 
 export default class extends Component<{ postId: string }> {
   static getInitialProps({ query: { id } }) {
-    console.log('C', id);
+    logger.log('C', id);
     return { postId: id };
   }
   render() {

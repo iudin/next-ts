@@ -3,6 +3,8 @@ import { Dispatch } from 'redux';
 import { API_URL, RequestState, RequestType } from '../constants';
 import { IAxiosInit, IRequestCreatorAction } from './i';
 
+import logger from 'Lib/log';
+
 export const axiosInit: IAxiosInit = ({ token }) => {
   axios.defaults.baseURL = API_URL;
   axios.defaults.headers.common['Authorization'] = `${token}`;
@@ -54,7 +56,7 @@ export async function requestCreator(
       break;
     }
     default: {
-      console.log(`${requestType} - неизвестный тип запроса`);
+      logger.log(`${requestType} - неизвестный тип запроса`);
       return;
     }
   }

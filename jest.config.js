@@ -19,6 +19,7 @@ module.exports = {
       '<rootDir>/__mocks__/mocks.js',
     '\\.s?css$': '<rootDir>/__mocks__/mocks.js',
     '^Components/(.*)': '<rootDir>/src/components/$1',
+    '^Lib/(.*)': '<rootDir>/lib/$1',
     '^Store/(.*)': '<rootDir>/src/store/$1',
     '^Utils/(.*)': '<rootDir>/src/utils/$1'
   },

@@ -6,6 +6,7 @@
 - [x] test with jest;
 - [x] ssr with custom express server;
 - [x] ssr caching with LRU-cache;
+- [x] server hot reload (nodemon);
 - [x] styles with styled-components both on server and client;
 - [x] custom theme (styled-components);
 - [x] env variables;
@@ -13,11 +14,11 @@
 - [x] webpack aliases;
 - [x] redux store;
 - [x] using functions and interfaces from other microservices;
+- [x] logger;
 
 - [ ] custom root path;
 - [ ] nested routing;
 - [ ] docker build;
-- [ ] logger;
 - [ ] head elements;
 - [ ] shallow routing.
 

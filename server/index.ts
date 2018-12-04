@@ -3,6 +3,8 @@ const lru = require('lru-cache');
 import * as express from 'express';
 import * as next from 'next';
 
+import logger from '../lib/log';
+
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -22,7 +24,7 @@ async function renderAndCache(
 ) {
   const key = getCacheKey(req);
   if (ssrCache.has(key)) {
-    console.log('Got cached page', key);
+    logger.log('Got cached page', key);
     res.setHeader('x-cache', 'HIT');
     res.send(ssrCache.get(key));
     return;
@@ -33,7 +35,7 @@ async function renderAndCache(
       res.send(html);
       return;
     }
-    console.log('Got page from server', key);
+    logger.log('Got page from server', key);
     ssrCache.set(key, html);
     res.setHeader('x-cache', 'MISS');
     res.send(html);
@@ -52,6 +54,6 @@ app.prepare().then(() => {
   server.get('*', (req, res) => handle(req, res));
   server.listen(port, err => {
     if (err) throw err;
-    console.log(`> Ready on http://localhost:${port}`);
+    logger.log(`> Ready on http://localhost:${port}`);
   });
 });
