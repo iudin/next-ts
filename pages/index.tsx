@@ -1,9 +1,9 @@
 import * as React from 'react';
-import styled from '../src/styled-components';
 import Link from 'next/link';
+import Head from 'next/head';
+import styled from '../src/styled-components';
 
 import Data from 'Components/data';
-import Articles from 'Components/articles';
 
 import { TransactionTypes } from '../../kari/packages/infrastructure/dist/infrastructure/Document/constants'; // test using other microservices functions
 
@@ -29,6 +29,9 @@ const Img = styled.img`
 
 export default () => (
   <>
+    <Head>
+      <title>Home</title>
+    </Head>
     <Nav>
       <li>
         <Link href="/a">
@@ -67,6 +70,5 @@ export default () => (
     <p style={{ fontWeight: 900 }}>Test text with font weight style...</p>
     <p className="rubl">a</p>
     <p>Remote function test: {TransactionTypes.REGISTER_POSITION}</p>
-    <Articles />
   </>
 );

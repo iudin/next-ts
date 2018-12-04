@@ -15,12 +15,13 @@
 - [x] redux store;
 - [x] using functions and interfaces from other microservices;
 - [x] logger;
+- [x] head elements;
 
 - [ ] custom root path;
 - [ ] nested routing;
 - [ ] docker build;
-- [ ] head elements;
-- [ ] shallow routing.
+- [ ] shallow routing;
+- [ ] SEO analytics.
 
 ## Install
 
