@@ -48,5 +48,19 @@ export default () => (
     <p>
       <em>{process.env.TEST_VAR}</em>
     </p>
+    <p>
+      <strong>Test text with font weight style...</strong>
+    </p>
+    <p>
+      <strong>
+        <em>Test text with font weight style...</em>
+      </strong>
+      <span className="icon-arr" />
+    </p>
+    <p style={{ fontWeight: 400 }}>Test text with font weight style...</p>
+    <p style={{ fontWeight: 500 }}>Test text with font weight style...</p>
+    <p style={{ fontWeight: 600 }}>Test text with font weight style...</p>
+    <p style={{ fontWeight: 700 }}>Test text with font weight style...</p>
+    <p style={{ fontWeight: 900 }}>Test text with font weight style...</p>
   </>
 );

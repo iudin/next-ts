@@ -1,8 +1,8 @@
 export function getFontFace(
   name: string,
   src: string,
-  fontStyle: string = 'normal',
-  fontWeight: number = 400
+  fontWeight: number = 400,
+  fontStyle: string = 'normal'
 ): string {
   return `
     @font-face {

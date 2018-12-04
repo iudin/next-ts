@@ -14,9 +14,11 @@
 
 - [ ] redux store;
 - [ ] custom root path;
+- [ ] nested routing;
 - [ ] docker build;
 - [ ] logger;
 - [ ] head elements;
+- [ ] using functions and interfaces from other microservices;
 - [ ] shallow routing.
 
 ## Install
