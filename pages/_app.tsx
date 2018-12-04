@@ -7,7 +7,7 @@ import {
 } from 'styled-components';
 
 import theme, { ITheme } from '../src/theme';
-import { getFontFace } from '../src/utils/helpers';
+import { getFontFace } from 'Utils/helpers';
 
 const Fonts = createGlobalStyle`
   ${getFontFace('AvenirNextCyr', 'AvenirNextCyr-Regular')}

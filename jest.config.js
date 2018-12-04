@@ -18,8 +18,8 @@ module.exports = {
     '\\.(jpe?g|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/mocks.js',
     '\\.s?css$': '<rootDir>/__mocks__/mocks.js',
-    '^Static/(.*)': '<rootDir>/static/$1',
-    '^Components/(.*)': '<rootDir>/src/components/$1'
+    '^Components/(.*)': '<rootDir>/src/components/$1',
+    '^Utils/(.*)': '<rootDir>/src/utils/$1'
   },
   snapshotSerializers: ['enzyme-to-json/serializer']
 };
