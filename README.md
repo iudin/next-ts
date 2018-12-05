@@ -16,6 +16,7 @@
 - [x] using functions and interfaces from other microservices;
 - [x] logger;
 - [x] head elements;
+- [x] custom error page;
 
 - [ ] custom root path;
 - [ ] nested routing;
