@@ -48,6 +48,11 @@ export default () => (
           <a>post #2</a>
         </Link>
       </li>
+      <li>
+        <Link href="/test">
+          <a>test</a>
+        </Link>
+      </li>
     </Nav>
     <Img src="/static/img/kari-logo.svg" alt="" />
     <Data />
