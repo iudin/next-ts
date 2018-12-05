@@ -1,7 +1,7 @@
 {
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "rules": {
-    "no-console": false,
+    "no-console": true,
     "no-angle-bracket-type-assertion": false,
     "ordered-imports": false,
     "object-literal-sort-keys": false,
