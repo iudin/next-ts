@@ -5,10 +5,11 @@ import styled from '../src/styled-components';
 
 import Data from 'Components/data';
 
-import { TransactionTypes } from '../../kari/packages/infrastructure/dist/infrastructure/Document/constants'; // test using other microservices functions
+// test using other microservices functions
+import { TransactionTypes } from '../../kari/packages/infrastructure/dist/infrastructure/Document/constants';
 
 const Nav = styled.ul`
-  margin: 0;
+  margin: 0 0 20px;
   padding: 0;
   list-style: none;
   li {
@@ -34,22 +35,12 @@ export default () => (
     </Head>
     <Nav>
       <li>
-        <Link href="/a">
-          <a>a</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/b">
-          <a>b</a>
-        </Link>
-      </li>
-      <li>
         <Link href={{ pathname: '/posts', query: { id: '2' } }} as="/posts/2">
           <a>post #2</a>
         </Link>
       </li>
       <li>
-        <Link href="/test">
+        <Link href="/articles">
           <a>test</a>
         </Link>
       </li>

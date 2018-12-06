@@ -24,62 +24,63 @@ export async function requestCreator(
     sendParams,
     other
   } = action;
-  dispatch({
-    type: type + RequestState.REQUEST,
-    actionType: type,
-    requestType,
-    other
-  });
-  let method;
-  let data;
-  let params;
-  switch (requestType) {
-    case RequestType.GET: {
-      method = 'get';
-      params = sendParams;
-      break;
-    }
-    case RequestType.POST: {
-      method = 'post';
-      data = sendObject;
-      break;
-    }
-    case RequestType.PUT: {
-      method = 'put';
-      data = sendObject;
-      break;
-    }
-    case RequestType.DELETE: {
-      method = 'delete';
-      params = sendParams;
-      data = sendObject;
-      break;
-    }
-    default: {
-      logger.log(`${requestType} - неизвестный тип запроса`);
-      return;
-    }
-  }
-  await axios({ method, url, data, params, headers })
-    .then(result => {
-      dispatch({
-        type: type + RequestState.SUCCESS,
-        payload: result[resultField],
-        fullResponse: result,
-        actionType: type,
-        requestType,
-        other
-      });
-    })
-    .catch(error => {
-      dispatch({
-        type: type + RequestState.FAIL,
-        msg: error.message,
-        fullResponse: error,
-        actionType: type,
-        requestType,
-        error,
-        other
-      });
+  try {
+    dispatch({
+      type: type + RequestState.REQUEST,
+      actionType: type,
+      requestType,
+      other
     });
+    let method;
+    let data;
+    let params;
+    switch (requestType) {
+      case RequestType.GET: {
+        method = 'get';
+        params = sendParams;
+        break;
+      }
+      case RequestType.POST: {
+        method = 'post';
+        data = sendObject;
+        break;
+      }
+      case RequestType.PUT: {
+        method = 'put';
+        data = sendObject;
+        break;
+      }
+      case RequestType.DELETE: {
+        method = 'delete';
+        params = sendParams;
+        data = sendObject;
+        break;
+      }
+      default: {
+        logger.log(`${requestType} - неизвестный тип запроса`);
+        return;
+      }
+    }
+    const result = await axios({ method, url, data, params, headers });
+    dispatch({
+      type: type + RequestState.SUCCESS,
+      payload: result[resultField],
+      fullResponse: result,
+      actionType: type,
+      requestType,
+      other
+    });
+    return result[resultField];
+  } catch (error) {
+    dispatch({
+      type: type + RequestState.FAIL,
+      msg: error.message,
+      fullResponse: error,
+      actionType: type,
+      requestType,
+      error,
+      other
+    });
+    return error.message;
+  }
 }
