@@ -47,11 +47,10 @@ type IProps = ThemeProviderProps<ITheme> & { store: any };
 
 class Root extends App<IProps> {
   static async getInitialProps({ Component, ctx }) {
-    return {
-      pageProps: Component.getInitialProps
-        ? await Component.getInitialProps(ctx)
-        : {}
-    };
+    const pageProps = Component.getInitialProps
+      ? await Component.getInitialProps(ctx)
+      : {};
+    return { ...pageProps };
   }
   public render() {
     const { Component, pageProps, store } = this.props;

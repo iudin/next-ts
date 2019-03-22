@@ -12,17 +12,21 @@
 - [x] env variables;
 - [x] semver;
 - [x] webpack aliases;
-- [x] redux store;
 - [x] using functions and interfaces from other microservices;
 - [x] logger;
 - [x] head elements;
+- [x] custom error page;
+- [x] redux store;
+- [x] fetching data from server side;
 
 - [ ] custom root path;
 - [ ] nested routing;
-- [ ] docker build;
+- [ ] docker build (multistage?);
+- [ ] SEO analytics (with-google-analytics, with-react-ga examples);
+- [ ] icons (as font or svg or base64);
+- [ ] static export;
 - [ ] shallow routing;
-- [ ] SEO analytics;
-- [ ] static export.
+- [ ] prefetching pages.
 
 ## Install
 
@@ -81,3 +85,27 @@ moduleNameMapper: {
 ```
 
 Source: [link](https://medium.com/@martin_hotell/type-safe-es2015-module-import-path-aliasing-with-webpack-typescript-and-jest-fe461347e010)
+
+## Fetching data on server side with Redux
+
+Need `next-redux-wrapper` package.
+
+`_app.tsx`:
+
+```
+export default withRedux(initStore)(RootComponent);
+```
+
+Function `initStore` need to take `initialState` as parameter:
+
+```
+export const initStore = (initialState = {}) =>
+  createStore<IState, AnyAction, {}, {}>(reducer, initialState, enhancer);
+```
+
+## Migration Kari
+
+1. Theme (styled-components) must contain all project colors and other css params
+   (like media-queries params, default margins, paddings, borders, transitions, shadows etc.).
+2. Need separate directory for universal styled components.
+3. Constants in Store entities migrate to enums in i.ts files.
